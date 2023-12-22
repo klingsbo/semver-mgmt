@@ -1,0 +1,24 @@
+name: Pull Request Build
+
+on:
+  push:
+
+jobs:
+  semver-mgmt-build:
+    name: Build "${{ github.ref_name }}" in ${{ github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout
+
+      - uses: actions/setup-java@v3
+        name: Setup Java
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2.11.1
+
+      - name: Execute Gradle build
+        run: ./gradlew build
