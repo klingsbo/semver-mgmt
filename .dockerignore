@@ -1,0 +1,13 @@
+# Gradle
+.gradle/
+gradle/
+
+# Intellij Idea
+.idea/
+*.iml
+
+# Source
+src/
+
+# Build
+build/libs/*-plain.jar
