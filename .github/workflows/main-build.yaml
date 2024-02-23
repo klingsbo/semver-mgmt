@@ -48,5 +48,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:${{ steps.tag_version.outputs.new_tag }}
+            ghcr.io/${{ github.repository }}:${{ steps.tagging.outputs.new_tag }}
             ghcr.io/${{ github.repository }}:${{ github.sha }}
